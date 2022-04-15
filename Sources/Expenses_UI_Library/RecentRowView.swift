@@ -14,12 +14,16 @@ public struct RecentRowView: View {
     @State var amount: Double?
     @State var category: String
     
+    
+    
     public init(item: String, date: String, amount: Double, category: String) {
         self.item = item
         self.date = date
         self.amount = amount
         self.category = category
     }
+    
+    
     
     func convertSymbols(_ category: String) -> String {
         
@@ -41,6 +45,7 @@ public struct RecentRowView: View {
     }
     
     public var body: some View {
+        let material: Material = .thin
         HStack {
             Image(systemName: convertSymbols(category))
             VStack(alignment: .leading) {
@@ -53,6 +58,10 @@ public struct RecentRowView: View {
             Spacer()
             Text("$\(amount ?? 0.0, specifier: "%.2f")")
         }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .center)
+        .clipped()
+        .background(material, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
     
     
