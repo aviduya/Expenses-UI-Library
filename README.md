@@ -1,3 +1,3 @@
 # Expenses_UI_Library
 
-A description of this package.
+A collection of UI Modules Extracted out of the main build, specifically for Expenses App
