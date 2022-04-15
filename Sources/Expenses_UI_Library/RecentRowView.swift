@@ -9,16 +9,16 @@ import SwiftUI
 
 public struct RecentRowView: View {
     
-    @Binding var item: String
-    @Binding var date: String
-    @Binding var amount: Double
-    @Binding var category: String
+    @State var item: String
+    @State var date: String
+    @State var amount: Double?
+    @State var category: String
     
-    public init(item: Binding<String>, date: Binding<String>, amount: Binding<Double>, category: Binding<String>) {
-        self._item = item
-        self._date = date
-        self._amount = amount
-        self._category = category
+    public init(item: String, date: String, amount: Double, category: String) {
+        self.item = item
+        self.date = date
+        self.amount = amount
+        self.category = category
     }
     
     func convertSymbols(_ category: String) -> String {
@@ -51,7 +51,7 @@ public struct RecentRowView: View {
                     .opacity(0.5)
             }
             Spacer()
-            Text("$\(amount, specifier: "%.2f")")
+            Text("$\(amount ?? 0.0, specifier: "%.2f")")
         }
     }
     
