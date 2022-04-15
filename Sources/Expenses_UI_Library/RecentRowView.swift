@@ -59,10 +59,6 @@ public struct RecentRowView: View {
             Spacer()
             Text("$\(amount ?? 0.0, specifier: "%.2f")")
         }
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .center)
-        .clipped()
-        .background(material, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
     
     
