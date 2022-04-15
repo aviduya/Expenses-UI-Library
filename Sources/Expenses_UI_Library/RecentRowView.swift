@@ -48,6 +48,7 @@ public struct RecentRowView: View {
         let material: Material = .thin
         HStack {
             Image(systemName: convertSymbols(category))
+            Divider()
             VStack(alignment: .leading) {
                 Text(item)
                     .bold()
