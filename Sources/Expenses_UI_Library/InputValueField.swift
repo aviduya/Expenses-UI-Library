@@ -10,6 +10,7 @@ import SwiftUI
 public struct InputValueField: View {
     
     @Binding var input: Double?
+    @State var isValidated: Bool = false
     
     let material: Material = .thin
     
@@ -23,17 +24,33 @@ public struct InputValueField: View {
                 .font(.title)
             TextField("Amount...", value: $input, format: .currency(code: "usd"))
                 .font(Font.headline.weight(.bold))
+            Spacer()
+            if isValidated == true {
+                Image(systemName: "exclamationmark")
+                    .font(.title2)
+                    .foregroundColor(Color.red)
+            }
+            
+        }
+        .onAppear {
+           isEmpty()
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .center)
         .clipped()
         .background(material, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
+    
+      func isEmpty() {
+        if input == 0.0 {
+            isValidated = true
+        }
+    }
 }
 
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        InputValueField(input: .constant(12.0))
+        InputValueField(input: .constant(0))
     }
 }
