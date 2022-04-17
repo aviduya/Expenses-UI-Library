@@ -23,7 +23,11 @@ public struct InputValueField: View {
             Image(systemName: "dollarsign.circle")
                 .font(.title)
             TextField("Amount...", value: $input, format: .currency(code: "usd"))
+                .keyboardType(.decimalPad)
                 .font(Font.headline.weight(.bold))
+                .onTapGesture {
+                    isEmpty()
+                }
             Spacer()
             if isValidated == true {
                 Image(systemName: "exclamationmark")
