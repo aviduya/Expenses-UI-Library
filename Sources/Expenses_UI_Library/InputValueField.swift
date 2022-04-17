@@ -10,12 +10,13 @@ import SwiftUI
 public struct InputValueField: View {
     
     @Binding var input: Double?
-    @State var isValidated: Bool = false
+    @Binding var isValidated: Bool
     
     let material: Material = .thin
     
-    public init(input: Binding<Double?>) {
+    public init(input: Binding<Double?>, isValidated: Binding<Bool>) {
         self._input = input
+        self._isValidated = isValidated
     }
     
     public var body: some View {
@@ -55,6 +56,6 @@ public struct InputValueField: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        InputValueField(input: .constant(0))
+        InputValueField(input: .constant(0), isValidated: .constant(false))
     }
 }
