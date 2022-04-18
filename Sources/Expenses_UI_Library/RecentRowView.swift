@@ -45,7 +45,6 @@ public struct RecentRowView: View {
     }
     
     public var body: some View {
-        let material: Material = .thin
         HStack {
             Image(systemName: convertSymbols(category))
             Divider()
