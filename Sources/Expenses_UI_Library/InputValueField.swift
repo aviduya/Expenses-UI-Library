@@ -30,7 +30,7 @@ public struct InputValueField: View {
                     isEmpty()
                 }
             Spacer()
-            if isValidated == true {
+            if isValidated != true {
                 Image(systemName: "exclamationmark")
                     .font(.title2)
                     .foregroundColor(Color.red)
