@@ -42,7 +42,7 @@ public struct InputTextField: View {
                 .font(Font.headline.weight(.bold))
             Spacer()
             if isValidated != true {
-                Image(systemName: "exclamationmark.circle")
+                Image(systemName: "exclamationmark")
                     .font(.title2)
                     .foregroundColor(Color.red)
             }
