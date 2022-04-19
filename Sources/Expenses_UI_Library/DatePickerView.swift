@@ -27,7 +27,7 @@ struct CalendarView: View {
     private func convertDate(date: Date) -> String {
         let formatter = DateFormatter()
         
-        formatter.dateFormat = "MMMM d, YYYY"
+        formatter.dateFormat = "MMMM d, YYYY HH:mm"
         
         return formatter.string(from: date)
     }
