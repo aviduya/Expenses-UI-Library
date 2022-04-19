@@ -15,7 +15,6 @@ struct CalendarView: View {
         NavigationView {
             VStack {
                 DatePicker("", selection: $input, displayedComponents: .hourAndMinute)
-                    .datePickerStyle(GraphicalDatePickerStyle())
                     .frame(maxHeight: 400)
                     .padding()
             }
