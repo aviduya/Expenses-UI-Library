@@ -14,7 +14,7 @@ struct CalendarView: View {
     var body: some View {
         NavigationView {
             VStack {
-                DatePicker("", selection: $input, displayedComponents: .hourAndMinute)
+                DatePicker("", selection: $input)
                     .frame(maxHeight: 400)
                     .padding()
             }
