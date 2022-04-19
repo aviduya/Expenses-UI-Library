@@ -17,9 +17,9 @@ public struct InputTextField: View {
         
         switch name {
         case "Item...":
-            return "tag.circle"
+            return "tag"
         case "Merchant...":
-            return"building.2.crop.circle"
+            return"building.2"
         default:
             return "Error"
         }

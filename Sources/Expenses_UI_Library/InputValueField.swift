@@ -21,7 +21,7 @@ public struct InputValueField: View {
     
     public var body: some View {
         HStack {
-            Image(systemName: "dollarsign.circle")
+            Image(systemName: "dollarsign")
                 .font(.title)
             TextField("Amount...", value: $input, format: .currency(code: "usd"))
                 .keyboardType(.decimalPad)
