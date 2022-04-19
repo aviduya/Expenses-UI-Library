@@ -12,10 +12,23 @@ struct CalendarView: View {
     @Binding var input: Date
     
     var body: some View {
-        DatePicker("", selection: $input, displayedComponents: .date)
-            .datePickerStyle(GraphicalDatePickerStyle())
-            .frame(maxHeight: 400)
-            .padding()
+        NavigationView {
+            VStack {
+                DatePicker("", selection: $input, displayedComponents: .hourAndMinute)
+                    .datePickerStyle(GraphicalDatePickerStyle())
+                    .frame(maxHeight: 400)
+                    .padding()
+            }
+            .navigationTitle(convertDate(date: input))
+        }
+    }
+    
+    private func convertDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "MMMM d, YYYY"
+        
+        return formatter.string(from: date)
     }
 }
 
