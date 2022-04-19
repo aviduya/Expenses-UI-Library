@@ -16,7 +16,6 @@ struct CalendarView: View {
             VStack {
                 DatePicker("", selection: $input)
                     .datePickerStyle(GraphicalDatePickerStyle())
-                    .frame(maxHeight: 400)
                     .padding()
                 Spacer()
             }
