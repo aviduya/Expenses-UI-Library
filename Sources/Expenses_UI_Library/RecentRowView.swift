@@ -47,7 +47,7 @@ public struct RecentRowView: View {
     public var body: some View {
         HStack {
             Image(systemName: convertSymbols(category))
-                .frame(width: 44)
+                .frame(width: 30)
             Divider()
             VStack(alignment: .leading) {
                 Text(item)
