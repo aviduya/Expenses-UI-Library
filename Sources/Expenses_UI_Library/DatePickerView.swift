@@ -18,6 +18,7 @@ struct CalendarView: View {
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .frame(maxHeight: 400)
                     .padding()
+                Spacer()
             }
             .navigationTitle(convertDate(date: input))
         }
